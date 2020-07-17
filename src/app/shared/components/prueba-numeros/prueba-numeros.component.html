@@ -1,0 +1,33 @@
+<section class="form-group form-inline">
+    <div class="form-inline">
+        <label [class]="aspecto.labelLinea" for="txtNominal">Nominal: </label>
+        <input [(ngModel)]="tNominal" [class]="aspecto.formLinea" type="text" id="txtNominal" style="text-align: right;" (keydown)="onKeyDownTDisplayL($event)" (blur)="tNominal = onBlurTDisplayL($event, 2); mov.nominal = dispANumL(tNominal); calculaEfectivo()">
+    </div>
+    <div class="form-inline">
+        <label [class]="aspecto.labelLinea" for="txtEfectivo">Val Efectivo: </label>
+        <input [(ngModel)]="tValEfectivo" [class]="aspecto.formLinea" type="text" id="txtEfectivo" style="text-align: right;" (keydown)="onKeyDownTDisplayL($event)" (blur)="tValEfectivo = onBlurTDisplayL($event, 2); mov.valEfectivo = dispANumL(tValEfectivo)">
+    </div>   
+    <div class="form-inline">
+        <label [class]="aspecto.labelLinea" for="txtPrecio">Precio: </label>
+        <input [(ngModel)]="tPrecio" [class]="aspecto.formLinea" type="text" id="txtPrecio" style="text-align: right;" (keydown)="tPrecio = onKeyDownTSumaDisplayL($event, 8); mov.precio = dispANumL(tPrecio)" (blur)="calculaEfectivo()">
+    </div>    
+    <div class="form-inline">
+        <label [class]="aspecto.labelLinea" for="txtTpCambio">Tipo de Cambio: </label>
+        <input [(ngModel)]="tTpCambio" [class]="aspecto.formLinea" type="text" id="txtTpCambio" style="text-align: right;" (keydown)="onKeyDownTDisplayL($event)" (blur)="tTpCambio = onBlurTDisplayL($event, 4); mov.tpCambio = dispANumL(tTpCambio)">
+    </div>     
+    <div class="form-inline">
+        <label [class]="aspecto.labelLinea" for="txtContraprestacion">Contraprestacion: </label>
+        <input [(ngModel)]="tContra" [class]="aspecto.formLinea" type="text" id="txtContraprestacion" style="text-align: right;" (keydown)="tContra = onKeyDownTSumaDisplayL($event, 5); mov.contraprestacion = dispANumL(tContra)">
+    </div>   
+    <div class="form-inline">
+        <label [class]="aspecto.labelLinea" for="txtPContraprestacion">Precio Contraprestacion: </label>
+        <input [(ngModel)]="tPContra" [class]="aspecto.formLinea" type="text" id="txtPContraprestacion" style="text-align: right;" (keydown)="tPContra = onKeyDownTSumaDisplayL($event, 8); mov.precioContra = dispANumL(tPContra)">
+    </div>      
+    <div class="form-inline">
+        <label [class]="aspecto.labelLinea" for="txtYTM">YTM: </label>
+        <input [(ngModel)]="tYTM" [class]="aspecto.formLinea" type="text" id="txtYTM" style="text-align: right;" (keydown)="onKeyDownTDisplayL($event)" (blur)="tYTM = onBlurTDisplayL($event, 10); mov.ytm = dispANumL(tYTM)">
+    </div>  
+    <div>
+        {{mov | json}}
+    </div>
+</section>
